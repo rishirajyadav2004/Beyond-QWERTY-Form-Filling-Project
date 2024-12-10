@@ -147,12 +147,12 @@
                         <option value="Widowed">Widowed</option>
                         <option value="Other">Other</option>
                     </select>
-                    <button type="button" class="voice-icon" onclick="handleVoiceInput('applicantType')">🎤</button>
+                    <button type="button" class="voice-icon" onclick="handleVoiceInputForOtherApplicants('applicantType')">🎤</button>
                     <button type="button" class="speak-icon" onclick="handleSpeak('What is the applicant type?')">🔊</button>
                 </label>
                 <label id="applicantFullNameLabel">Full Name:
                     <input type="text" name="applicantFullName" id="applicantFullName" placeholder="Full Name">
-                    <button type="button" class="voice-icon" onclick="handleVoiceInput('applicantFullName')">🎤</button>
+                    <button type="button" class="voice-icon" onclick="handleVoiceInputForOtherApplicants('applicantFullName')">🎤</button>
                     <button type="button" class="speak-icon" onclick="handleSpeak('What is the applicant\'s full name?')">🔊</button>
                 </label>
                 <label id="applicantGenderLabel">Gender:
@@ -162,12 +162,12 @@
                         <option value="Female">Female</option>
                         <option value="Other">Other</option>
                     </select>
-                    <button type="button" class="voice-icon" onclick="handleVoiceInput('applicantGender')">🎤</button>
+                    <button type="button" class="voice-icon" onclick="handleVoiceInputForOtherApplicants('applicantGender')">🎤</button>
                     <button type="button" class="speak-icon" onclick="handleSpeak('What is the applicant\'s gender?')">🔊</button>
                 </label>
                 <label id="applicantDobLabel">Date of Birth:
                     <input type="date" name="applicantDob" id="applicantDob">
-                    <button type="button" class="voice-icon" onclick="handleVoiceInput('applicantDob')">🎤</button>
+                    <button type="button" class="voice-icon" onclick="handleVoiceInputForOtherApplicants('applicantDob')">🎤</button>
                     <button type="button" class="speak-icon" onclick="handleSpeak('What is the applicant\'s date of birth?')">🔊</button>
                 </label>
             </section>
@@ -206,7 +206,7 @@
         }
 
 
-
+       
 
        // Function for speaking a question
 function speakQuestion(questionText) {

@@ -1,14 +1,13 @@
-from flask import Flask, render_template, request, redirect, flash, session
+from flask import Flask, render_template, request, redirect, flash, session, send_file
 import os
 from werkzeug.security import generate_password_hash, check_password_hash
-from googletrans import Translator
+from reportlab.pdfgen import canvas
+from reportlab.lib.pagesizes import letter
+from io import BytesIO
 
 # Flask app setup
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
-
-# Translator for multilingual support
-translator = Translator()
 
 # Home route
 @app.route('/')
@@ -54,7 +53,6 @@ def submit_login():
     email = request.form['email']
     password = request.form['password']
     try:
-        # Simulate login validation (this part would normally check the database)
         if email and password:  # Simplified condition for demo purposes
             session['user_id'] = email  # Dummy user ID
             session['email'] = email
@@ -82,25 +80,11 @@ def form_filling():
 @app.route('/submit', methods=['POST'])
 def submit_form():
     try:
-        # Retrieve and validate required fields
+        # Retrieve form data
         first_name = request.form.get('firstName')
         last_name = request.form.get('lastName')
         email = request.form.get('email')
-        
-        if not first_name or not last_name or not email:
-            flash("Essential fields (First Name, Last Name, Email) are required.", "error")
-            return redirect('/form-filling')
-
-        # Validate and handle age
         age = request.form.get('age')
-        if not age or not age.isdigit():
-            flash("Please provide a valid age.", "error")
-            return redirect('/form-filling')
-
-        # Convert age to integer
-        age = int(age)
-
-        # Set default values for optional fields
         middle_name = request.form.get('middleName', '')
         gender = request.form.get('gender', '')
         status = request.form.get('status', '')
@@ -116,13 +100,40 @@ def submit_form():
         applicant_dob = request.form.get('applicantDob', None)
         digital_signature = request.form.get('digitalSignature', '')
 
-        # Simulate successful form submission
-        flash("Form submitted successfully!", "success")
-        return redirect('/form-filling')
+        # Create PDF in memory
+        pdf_buffer = BytesIO()
+        c = canvas.Canvas(pdf_buffer, pagesize=letter)
+        c.drawString(100, 750, f"First Name: {first_name}")
+        c.drawString(100, 730, f"Last Name: {last_name}")
+        c.drawString(100, 710, f"Email: {email}")
+        c.drawString(100, 690, f"Age: {age}")
+        c.drawString(100, 670, f"Middle Name: {middle_name}")
+        c.drawString(100, 650, f"Gender: {gender}")
+        c.drawString(100, 630, f"Status: {status}")
+        c.drawString(100, 610, f"DOB: {dob}")
+        c.drawString(100, 590, f"Street Address: {street_address}")
+        c.drawString(100, 570, f"City: {city}")
+        c.drawString(100, 550, f"State/Province: {state_province}")
+        c.drawString(100, 530, f"Zip Code: {zip_code}")
+        c.drawString(100, 510, f"Phone Number: {phone_number}")
+        c.drawString(100, 490, f"Applicant Type: {applicant_type}")
+        c.drawString(100, 470, f"Applicant Full Name: {applicant_full_name}")
+        c.drawString(100, 450, f"Applicant Gender: {applicant_gender}")
+        c.drawString(100, 430, f"Applicant DOB: {applicant_dob}")
+        c.drawString(100, 410, f"Digital Signature: {digital_signature}")
+
+        c.save()
+        pdf_buffer.seek(0)
+
+        # Send the PDF to the user
+        return send_file(pdf_buffer, as_attachment=True, download_name="form_data.pdf", mimetype="application/pdf") 
+        
     except Exception as e:
         print(f"Error: {e}")
         flash("An error occurred while submitting the form. Please try again.", "error")
         return redirect('/form-filling')
+        
+
 
 # Run the app
 if __name__ == '__main__':
