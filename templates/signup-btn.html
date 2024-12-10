@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice-Based Signup Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Sacramento&display=swap" rel="stylesheet">
+    <style>
+        /* Styling remains unchanged */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f3f4f6;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-family: 'Sacramento', cursive;
+            color: #4a90e2;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 80%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+            position: relative;
+        }
+        .input-container {
+            position: relative;
+            width: 100%;
+        }
+        .mic-icon, .eye-icon {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #007bff;
+        }
+        .eye-icon {
+            right: 50px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .signup-button {
+            background-color: #007bff;
+        }
+        .signup-button:hover {
+            background-color: #0056b3;
+        }
+        .voice-button {
+            background-color: #28a745;
+        }
+        .voice-button:hover {
+            background-color: #218838;
+        }
+        .form-container {
+            margin-bottom: 20px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+        .login-link {
+            margin-top: 20px;
+            font-size: 16px;
+        }
+        .login-link a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Signup Form</h2>
+        <form id="signupForm" action='/submit_signup' method='POST'>
+            <div class="form-container">
+                <div class="input-container">
+                    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                    <span class="mic-icon" onclick="startVoiceInput('firstName')">🎤</span>
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="input-container">
+                    <input type="text" id="middleName" name="middleName" placeholder="Middle Name">
+                    <span class="mic-icon" onclick="startVoiceInput('middleName')">🎤</span>
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="input-container">
+                    <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                    <span class="mic-icon" onclick="startVoiceInput('lastName')">🎤</span>
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="input-container">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <span class="mic-icon" onclick="startVoiceInput('email')">🎤</span>
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="input-container">
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <span class="eye-icon" onclick="togglePasswordVisibility()">👁️</span>
+                    <span class="mic-icon" onclick="startVoiceInput('password')">🎤</span>
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="signup-button">Sign Up</button>
+                <button type="button" class="voice-button" onclick="startVoiceInput('all')">🎤 Fill All Fields</button>
+            </div>
+        </form>
+        <div class="login-link">
+            <p>Already have an account? <a href="/login">Login here</a></p>
+        </div>
+        <div class="footer">
+            <p>By signing up, you agree to our terms and conditions.</p>
+        </div>
+    </div>
+    <script>
+        function startVoiceInput(field) {
+            if (!('webkitSpeechRecognition' in window)) {
+                alert("Sorry, your browser does not support voice recognition.");
+                return;
+            }
+            const recognition = new webkitSpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            recognition.lang = 'en-US';
+            recognition.start();
+            recognition.onresult = function(event) {
+                let result = event.results[0][0].transcript.trim();
+
+                // Process first name: remove spaces and convert to lowercase with only the first letter capitalized
+                if (field === 'firstName' || field === 'lastName' || field === 'middleName') {
+                    result = result.replace(/\s+/g, ''); // Remove spaces
+                    // Capitalize only the first letter of the first name and make the rest lowercase
+                    if (field === 'firstName') {
+                        result = result.charAt(0).toUpperCase() + result.slice(1).toLowerCase();
+                    }
+                } 
+                // Process email: replace 'at' with '@', 'dot' with '.', remove spaces, and make lowercase
+                else if (field === 'email') {
+                    result = result.replace(/at/g, '@')
+                                .replace(/dot/g, '.')
+                                .replace(/ther/g, '') // Remove unwanted 'ther'
+                                .replace(/\s+/g, '')
+                                .toLowerCase();
+                    // Remove any duplicated '@' and ensure only one '@' appears
+                    let atIndex = result.indexOf('@');
+                    if (atIndex !== -1) {
+                        result = result.substring(0, atIndex + 1) + result.substring(atIndex + 1).replace(/@+/g, '');
+                    }
+                }
+
+                document.getElementById(field).value = result;
+            };
+            recognition.onerror = function(event) {
+                console.error("Error occurred: " + event.error);
+            };
+        }
+
+        
+
+    function togglePasswordVisibility() {
+        const passwordField = document.getElementById("password");
+        const currentType = passwordField.type;
+        passwordField.type = currentType === "password" ? "text" : "password";
+    }
+    </script>
+</body>
+</html>
