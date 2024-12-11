@@ -1,0 +1,8 @@
+
+Flask==3.0.3
+googletrans==4.0.0rc1
+reportlab==4.2.5
+requests==2.32.3
+SpeechRecognition==3.11.0
+urllib3==2.2.2
+Werkzeug==3.0.4

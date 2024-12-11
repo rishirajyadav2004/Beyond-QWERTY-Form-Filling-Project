@@ -4,10 +4,16 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 from io import BytesIO
+from googletrans import Translator
+
 
 # Flask app setup
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
+
+
+# Initialize the Translator
+translator = Translator()
 
 # Home route
 @app.route('/')
