@@ -27,6 +27,10 @@ def signup():
         return submit_signup()
     return render_template('signup-btn.html')
 
+@app.route('/favicon.ico')
+def favicon():
+    return app.send_static_file('favicon.ico')
+
 # Login route
 @app.route('/login', methods=['GET', 'POST'])
 def login():
