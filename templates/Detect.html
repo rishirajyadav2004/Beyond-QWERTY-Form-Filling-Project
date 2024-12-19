@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Detect - Beyond QWERTY</title>
+
+    <!-- Embedded CSS -->
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header Styles */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 30px;
+            color: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        .logo span {
+            color: #fff;
+        }
+
+        .menus {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1rem;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            background-color: #00d4ff;
+            color: #333;
+        }
+
+        /* Detect Section */
+        .detect-section {
+            text-align: center;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            border-radius: 8px;
+        }
+
+        .detect-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .detect-section p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .detect-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .content h2 {
+            font-size: 1.8rem;
+            color: #00d4ff;
+            margin-bottom: 15px;
+        }
+
+        .content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .content ul li {
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        .demo-btn {
+            background-color: #00d4ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .demo-btn:hover {
+            background-color: #fff;
+            color: #00d4ff;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer Styles */
+        .footer {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .menus {
+                margin: 10px 0;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .detect-section {
+                padding: 20px;
+            }
+
+            .demo-btn {
+                padding: 8px 15px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo">Insure<span>Now</span></div>
+
+        <div class="menus">
+            <ul class="nav-links">
+                <li><a href="/homepage">Home</a></li>
+                <li><a href="/templates/Docker.html">Docker</a></li>
+                <li><a href="/templates/Detect.html">Detect</a></li>
+                <li><a href="/templates/Resources.html">Resources</a></li>
+                <li><a href="/templates/Enterprise.html">Enterprise</a></li>
+                <li><a href="/templates/Team.html">Team</a></li>
+                
+    </header>
+
+    <!-- Detect Section -->
+    <section class="detect-section">
+        <h1>Detect - Voice-Based Form Filling</h1>
+        <p>Welcome to the detection page. Here, we will explore how the system detects and fills forms based on voice input.</p>
+
+        <div class="image-container">
+            <img src="https://plus.unsplash.com/premium_photo-1679785653182-1bf52c919060?q=80&w=923&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Voice Detection" class="detect-image">
+        </div>
+
+        <div class="content">
+            <h2>How It Works</h2>
+            <p>This page demonstrates how the voice-based detection system works. By integrating speech recognition with our dynamic form filling system, users can interact with forms naturally.</p>
+            
+            <h3>Key Features:</h3>
+            <ul>
+                <li>Real-time speech recognition</li>
+                <li>Multi-language support</li>
+                <li>Auto-filling forms with voice commands</li>
+                <li>Seamless integration with various platforms</li>
+            </ul>
+
+            <button class="demo-btn" id="demoButton">Try It Out</button>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 InsureNow | All Rights Reserved</p>
+    </footer>
+
+    <!-- Embedded JavaScript -->
+    <script>
+        // Simple functionality for the "Try It Out" button
+        document.getElementById("demoButton").addEventListener("click", function() {
+            alert("Demo functionality will be coming soon! Stay tuned.");
+        });
+    </script>
+
+</body>
+</html>

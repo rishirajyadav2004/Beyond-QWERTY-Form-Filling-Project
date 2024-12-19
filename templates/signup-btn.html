@@ -6,6 +6,80 @@
     <title>Voice-Based Signup Page</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Sacramento&display=swap" rel="stylesheet">
     <style>
+
+        /* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 30px;
+    color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo Styling */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00d4ff;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #fff;
+}
+
+/* Navigation Menu */
+.menus {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #00d4ff;
+    color: #333;
+}
+
+/* Get Started Button */
+.start button {
+    background-color: #00d4ff;
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.start button:hover {
+    background-color: #fff;
+    color: #00d4ff;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
         /* Styling remains unchanged */
         body {
             font-family: 'Roboto', sans-serif;
@@ -106,6 +180,22 @@
     </style>
 </head>
 <body>
+    <header class="header">
+        <div class="logo" onclick="goToHome()">Insure<span>Now</span></div>
+        <div class="menus">
+            <ul class="nav-links">
+                <li><a href="/templates/index.html">Voice Form Filling</a></li>
+                <li><a href="/templates/Docker.html">Docker</a></li>
+                <li><a href="/templates/Detect.html">Detect</a></li>
+                <li><a href="/templates/Resources.html">Resources</a></li>
+                <li><a href="/templates/Enterprise.html">Enterprise</a></li>
+                <li><a href="/templates/Team.html">Team</a></li>
+                
+            </ul>
+        </div>
+    </header>
+
+    
     <div class="container">
         <h2>Signup Form</h2>
         <form id="signupForm" action='/submit_signup' method='POST'>
@@ -153,6 +243,28 @@
         </div>
     </div>
     <script>
+        function goToHome() {
+            window.location.href = "index.html";
+        }
+
+        function startVoiceInput(inputId) {
+            // Add voice input handling code here
+            alert("Voice input activated for " + inputId);
+        }
+
+        function togglePasswordVisibility() {
+            const passwordField = document.getElementById("password");
+            const type = passwordField.type === "password" ? "text" : "password";
+            passwordField.type = type;
+        }
+
+        function startAction() {
+            window.location.href = "index.html";
+        }
+
+
+
+
         function startVoiceInput(field) {
             if (!('webkitSpeechRecognition' in window)) {
                 alert("Sorry, your browser does not support voice recognition.");

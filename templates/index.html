@@ -8,6 +8,7 @@
     <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
@@ -18,6 +19,21 @@
 <body>
     <header class="header">
         <div class="logo">Insure<span>Now</span></div>
+
+        <div class="menus">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="/templates/Docker.html">Docker</a></li>
+                <li><a href="/templates/Detect.html">Detect</a></li>
+                <li><a href="/templates/Resources.html">Resources</a></li>
+                <li><a href="/templates/Enterprise.html">Enterprise</a></li>
+                <li><a href="/templates/Team.html">Team</a></li>
+                <div class="as">
+                    <li class="start"><button>Get Started</button></li>
+                </div>
+            </ul>
+        </div>
+
         <div class="header-links">
             <p><a href="/signup">Sign Up</a></p>
             <p><a href="/login">Log In</a></p>
@@ -45,7 +61,7 @@
     </div>
 
     <div class="ml">
-        <form id="insuranceForm" method="POST" action="/submit">
+        <form id="insuranceForm" method="POST" action="/form-filling" enctype="multipart/form-data">
             <section class="section">
                 <h2 id="personalInfoTitle">Personal Information</h2>
                 <label id="firstNameLabel">First Name:
@@ -190,6 +206,17 @@
     </div>
 
     <script>
+         const form = document.getElementById('insuranceForm');
+        form.addEventListener('submit', function (e) {
+            setTimeout(() => {
+                window.location.href = '/form-filling';
+            }, 2000); // Adjust the delay based on your requirements
+        });
+
+
+
+
+
         // Function for voice input
         function handleVoiceInput(fieldId) {
             console.log(`Voice input started for: ${fieldId}`);

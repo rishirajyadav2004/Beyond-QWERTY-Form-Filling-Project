@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team | Beyond QWERTY</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Navbar Styles */
+        header {
+            background: #333;
+            padding: 10px 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: #00d4ff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            padding: 8px 12px;
+            transition: all 0.3s ease-in-out;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background-color: #00d4ff;
+            color: #333;
+        }
+
+        /* Content Section */
+        .content {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h1, .content h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .content li {
+            margin-bottom: 10px;
+        }
+
+        .content img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                Beyond QWERTY
+            </div>
+            <div class="menus">
+                <ul class="nav-links">
+                    <li><a href="/homepage">Home</a></li>
+                    <li><a href="/templates/Docker.html">Docker</a></li>
+                    <li><a href="/templates/Detect.html">Detect</a></li>
+                    <li><a href="/templates/Resources.html">Resources</a></li>
+                    <li><a href="/templates/Enterprise.html">Enterprise</a></li>
+                    <li><a href="/templates/Team.html" class="active">Team</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <main>
+        <section class="content">
+            <h1>Meet the Team</h1>
+            <p>Our project "Beyond QWERTY: Form Filling" is designed to remove language barriers and provide seamless form filling using voice input. Here's the team behind the project:</p>
+
+            <h2>Rishiraj Yadav</h2>
+            <p><strong>Role:</strong> Developer (Frontend & Backend)</p>
+            <p>I, Rishiraj Yadav, developed both the frontend and backend of the "Beyond QWERTY: Form Filling" project. The project integrates multiple technologies, including Flask, MySQL, and AI models to provide a smooth and intuitive voice-based form-filling experience.</p>
+        </section>
+    </main>
+
+    <script>
+        // Simple functionality for the "Try It Out" button
+      document.getElementById("demoButton").addEventListener("click", function() {
+            alert("Demo functionality will be coming soon! Stay tuned.");
+        });
+        
+    </script>
+</body>
+</html>

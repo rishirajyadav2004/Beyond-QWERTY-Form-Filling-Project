@@ -13,49 +13,148 @@ body {
 
 /* Header Styling */
 .header {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
     background-color: #333;
-    color: white;
-    position: fixed;
-    top: 0;
-    z-index: 1;
-}
-
-.logo {
-    font-size: 1.5em;
-    font-weight: bold;
+    padding: 10px 30px;
     color: #fff;
-    cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-.logo:hover {
-    color: #4CAF50;
-    transform: scale(1.1);
+/* Logo Styling */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00d4ff;
+    letter-spacing: 1px;
 }
 
 .logo span {
-    color: #4CAF50;
+    color: #fff;
 }
 
-.signup-btn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px 16px;
+/* Navigation Menu */
+.menus {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #00d4ff;
+    color: #333;
+}
+
+/* Get Started Button */
+.start button {
+    background-color: #00d4ff;
+    color: #333;
     border: none;
+    padding: 8px 15px;
+    font-size: 1rem;
+    font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-.signup-btn:hover {
-    background-color: #45a049;
+.start button:hover {
+    background-color: #fff;
+    color: #00d4ff;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
 }
+
+/* Sign Up and Log In links */
+.header-links {
+    display: flex;  /* Align Sign Up and Log In links horizontally */
+    gap: 20px;  /* Space between the links */
+    align-items: center;  /* Vertically align the links */
+}
+
+.header-links a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border: 2px solid #00d4ff; /* Blue border */
+    color: #00d4ff; /* Blue text */
+    border-radius: 5px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Hover effect - matches the .start button style */
+.header-links a:hover {
+    background-color: #fff; /* White background */
+    color: #00d4ff; /* Blue text */
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    cursor: pointer;
+}
+
+/* Optional: Active state for better interactivity */
+.header-links a:active {
+    transform: scale(0.98); /* Slight press effect */
+}
+
+/* Sign up & Log in icon styling */
+.header-links a i {
+    font-size: 1.2rem; /* Icon size */
+    transition: transform 0.3s ease; /* Icon size transition */
+}
+
+/* Hover effect for icons */
+.header-links a:hover i {
+    transform: translateX(5px); /* Icon movement on hover */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 10px;
+    }
+
+    .menus {
+        margin: 10px 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-links a {
+        font-size: 0.9rem; /* Smaller font size on smaller screens */
+        padding: 6px 12px;
+    }
+}
+
+
 
 /* Form Container Styling */
 .form-container {
@@ -258,7 +357,7 @@ button#clearSignature:hover {
     max-width: 1000px;
     margin: 100px auto 20px;
     padding: 20px;
-    background: #b9a5ce;
+    background: #00d4ff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 10%;
@@ -266,62 +365,7 @@ button#clearSignature:hover {
 }
 
 .text-color-primary{
-    color: rgb(209, 221, 224);
+    color: rgb(246, 246, 246);
 }
 
 
-/* Container for header links */
-.header-links {
-    display: flex;
-    justify-content: flex-end; /* Align to the right */
-    align-items: center;
-    padding: 5px 30px;
-    background-color: #77dd72; /* Light gray background */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-/* Styling for individual paragraphs containing the links */
-.header-links p {
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-    font-weight: 600;
-    color: #ffffff; /* Blue color */
-    margin-right: 30px; /* Spacing between the links */
-    transition: transform 0.3s ease, color 0.3s ease, letter-spacing 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
-    cursor: pointer; /* Make it feel like a button */
-    border-radius: 25px; /* Rounded corners for button effect */
-    padding: 8px 20px; /* Padding to create button appearance */
-    background-color: transparent; /* Initially transparent */
-    border: 2px solid transparent; /* Border with transparent initial state */
-}
-
-/* Remove right margin for the last link */
-.header-links p:last-child {
-    margin-right: 0;
-}
-
-/* Styling for the links */
-.header-links a {
-    color: inherit; /* Inherit color from the paragraph */
-    text-decoration: none;
-    font-weight: inherit; /* Inherit font-weight from the paragraph */
-    transition: color 0.3s ease, transform 0.3s ease, letter-spacing 0.3s ease;
-}
-
-/* Hover effects for the paragraph elements */
-.header-links p:hover {
-    color: white; /* White text on hover */
-    background-color: #0e7313; /* Blue background */
-    transform: translateY(-2px); /* Slight upward shift */
-    border-color: #007bff; /* Blue border when hovered */
-    padding: 8px 25px; /* Slightly increase padding for a button effect */
-    letter-spacing: 1px; /* Add some letter spacing */
-}
-
-/* Added bottom border for a more dynamic effect */
-.header-links a:hover {
-    color: white; /* Text color change */
-    transform: scale(1.1); /* Slightly enlarge text on hover */
-    border-bottom: 2px solid #0056b3; /* Underline effect */
-}

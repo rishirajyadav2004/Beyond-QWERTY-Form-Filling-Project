@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docker | Beyond QWERTY</title>
+    <!-- CSS for the Page -->
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Navbar Styles */
+        header {
+            background: #333;
+            padding: 10px 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+            margin: auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: #00d4ff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            padding: 8px 12px;
+            transition: all 0.3s ease-in-out;
+            border-radius: 5px;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background-color: #00d4ff;
+            color: #333;
+        }
+
+        /* Content Section */
+        .content {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .content h1, .content h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .content li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                Beyond QWERTY
+            </div>
+            <div class="menus">
+                <ul class="nav-links">
+                    <li><a href="/homepage">Home</a></li>
+                    <li><a href="/templates/Docker.html" >Docker</a></li>
+                    <li><a href="/templates/Detect.html">Detect</a></li>
+                    <li><a href="/templates/Resources.html">Resources</a></li>
+                    <li><a href="/templates/Enterprise.html">Enterprise</a></li>
+                    <li><a href="/templates/Team.html">Team</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <main>
+        <section class="content">
+            <h1>Docker Integration in Beyond QWERTY</h1>
+            <p>
+                Docker plays a crucial role in the <strong>Beyond QWERTY: Voice-Based Form Filling</strong> project. 
+                By containerizing the application, we ensure portability, scalability, and seamless deployment 
+                across different environments.
+            </p>
+            <h2>Why Docker?</h2>
+            <ul>
+                <li>Consistent environments across development, testing, and production.</li>
+                <li>Easy deployment and scaling.</li>
+                <li>Faster delivery of the application.</li>
+            </ul>
+            <h2>Key Features:</h2>
+            <ul>
+                <li>Dockerized Flask Backend</li>
+                <li>Integration with MySQL Database</li>
+                <li>Deployment-ready in isolated containers</li>
+            </ul>
+            <p>
+                Docker ensures that the application runs smoothly in any setup, making it ideal for 
+                enterprise-level projects and team collaborations.
+            </p>
+        </section>
+    </main>
+
+    <!-- JavaScript for Smooth Scrolling -->
+    <script>
+      // Simple functionality for the "Try It Out" button
+      document.getElementById("demoButton").addEventListener("click", function() {
+            alert("Demo functionality will be coming soon! Stay tuned.");
+        });
+    </script>
+</body>
+</html>
