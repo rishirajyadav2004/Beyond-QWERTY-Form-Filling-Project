@@ -11,7 +11,7 @@ This project is deployed using **Render** and utilizes **PostgreSQL** as the clo
 - **Frontend:** [Your Frontend Framework, e.g., HTML, CSS, JavaScript]
 
 ## Project Overview:
-This project is designed to [Brief description of your project]. The backend is built using Flask and connects to a PostgreSQL database hosted on Render for seamless data management.
+This project is designed to simplifies form filling by using voice commands, enabling seamless and efficient data entry. Users can interact with the system through speech, which is processed and converted into text to populate form fields automatically. The backend is built using Flask and connects to a PostgreSQL database hosted on Render for seamless data management.
 
 ## How to Access:
 1. Visit the live demo at [Live Demo](<https://mediform.onrender.com>).
