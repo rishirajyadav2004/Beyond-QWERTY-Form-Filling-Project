@@ -10,11 +10,15 @@
         /* Header Styling */
 .header {
     display: flex;
+    flex-wrap: wrap;
+    text-align: center;
     justify-content: space-between;
     align-items: center;
     background-color: #333;
-    padding: 10px 30px;
+    padding: 10px 5%;
     color: #fff;
+    width: 100%;
+    box-sizing: border-box;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -41,6 +45,7 @@
     list-style: none;
     display: flex;
     gap: 20px;
+    gap: 10px;
 }
 
 .nav-links li {
@@ -90,7 +95,8 @@
         }
         .container {
             max-width: 600px;
-            margin: auto;
+            width: 90%;
+            margin: 20px auto;
             background-color: #fff;
             padding: 30px;
             border-radius: 15px;
@@ -103,9 +109,9 @@
             margin-bottom: 20px;
         }
         input[type="text"], input[type="email"], input[type="password"] {
-            width: 80%;
-            padding: 15px;
-            margin: 10px 0;
+            width: 100%;
+            padding: 10px;
+            margin: 10px auto;
             border: 1px solid #ccc;
             border-radius: 8px;
             font-size: 16px;
@@ -139,7 +145,9 @@
             border-radius: 8px;
             font-size: 18px;
             cursor: pointer;
-            margin: 0 10px;
+            margin: 10px auto;
+            width: 90%; 
+            max-width: 300px;
             transition: background-color 0.3s;
         }
         button:hover {
@@ -177,6 +185,30 @@
         .login-link a:hover {
             text-decoration: underline;
         }
+
+
+        /* Use media queries for smaller devices */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2.5em; /* Scale down the heading */
+    }
+    button {
+        font-size: 1rem; /* Adjust font size for buttons */
+    }
+    .header {
+        padding: 5px 15px; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Additional scaling for very small devices */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 2em; /* Further scale down the heading */
+    }
+    .nav-links {
+        gap: 5px; /* Reduce gap between links */
+    }
+}
     </style>
 </head>
 <body>
