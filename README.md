@@ -2,7 +2,7 @@
 
 [Click Here For Live Demo](<https://mediform.onrender.com>)
 
-**Note:** It may take time to go live for the first try in this service, If the servier is inactive it go to sleep, When a new request comes in the service takes a few seconds to wake up(cold start) or it may take few minutes so you can try after some time
+**Note:** It may take time to go live for the first try in this service, If the server is inactive it go to sleep, When a new request comes in the service takes a few seconds to wake up(cold start) or it may take few minutes so you can try after some time
 
 This project is deployed using **Render** and utilizes **PostgreSQL** as the cloud database to store and manage data. You can view the live version of the application by clicking the link above.
 
