@@ -9,7 +9,20 @@ body {
     align-items: center;
     min-height: 100vh;
     display: inline;
+    overflow-x: hidden;
 }   
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .main-content {
+        width: 100%;
+        padding: 16px;
+    }
+}
+
 
 /* Header Styling */
 .header {
@@ -159,8 +172,8 @@ body {
 /* Form Container Styling */
 .form-container {
     width: 90%;
-    max-width: 500px;
-    margin: 100px auto 20px;
+    max-width: 600px;
+    margin: 0 auto;
     padding: 20px;
     background: #fff;
     border-radius: 8px;
