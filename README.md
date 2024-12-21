@@ -12,14 +12,20 @@ This project is deployed using **Render** and utilizes **PostgreSQL** as the clo
 - **Database:** PostgreSQL (Hosted on Render)
 - **Deployment:** Render (Cloud Platform)
 - **Frontend:** [Your Frontend Framework, e.g., HTML, CSS, JavaScript]
+  
 - ## Features
 
-### 1. Text-to-Speech Integration
+- ### 1. Voice Form Filling  
+- Implemented a *voice-based form-filling system* using the Web Speech API.  
+- Users can fill out forms by speaking into their device's microphone.  
+- Enhanced accessibility and usability for individuals with disabilities or limited typing skills.  
+
+### 2. Text-to-Speech Integration
 - Implemented a Speech Synthesis feature.
 - Reads out form questions when users click on a speaker icon.
 - Enhances accessibility and improves user interaction.
 
-### 2. PostgreSQL Integration with Cloud Service
+### 3. PostgreSQL Integration with Cloud Service
 - Upgraded the database to PostgreSQL, now deployed on a reliable cloud service.
 - Ensures:
   - Improved scalability
