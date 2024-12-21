@@ -12,7 +12,7 @@ This project is deployed using **Render** and utilizes **PostgreSQL** as the clo
 - **Database:** PostgreSQL (Hosted on Render)
 - **Deployment:** Render (Cloud Platform)
 - **Frontend:** [Your Frontend Framework, e.g., HTML, CSS, JavaScript]
-- ## New Features
+- ## Features
 
 ### 1. Text-to-Speech Integration
 - Implemented a Speech Synthesis feature.
