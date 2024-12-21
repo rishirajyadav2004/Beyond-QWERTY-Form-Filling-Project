@@ -13,9 +13,9 @@ This project is deployed using **Render** and utilizes **PostgreSQL** as the clo
 - **Deployment:** Render (Cloud Platform)
 - **Frontend:** [Your Frontend Framework, e.g., HTML, CSS, JavaScript]
   
-- ## Features
+## Features
 
-- ### 1. Voice Form Filling  
+### 1. Voice Form Filling  
 - Implemented a *voice-based form-filling system* using the Web Speech API.  
 - Users can fill out forms by speaking into their device's microphone.  
 - Enhanced accessibility and usability for individuals with disabilities or limited typing skills.  
