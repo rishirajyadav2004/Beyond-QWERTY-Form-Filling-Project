@@ -11,7 +11,7 @@ This project is deployed using **Render** and utilizes **PostgreSQL** as the clo
 - **Backend:** Flask
 - **Database:** PostgreSQL (Hosted on Render)
 - **Deployment:** Render (Cloud Platform)
-- **Frontend:** [Your Frontend Framework, e.g., HTML, CSS, JavaScript]
+- **Frontend:** [HTML, CSS, JavaScript]
   
 ## Features
 
