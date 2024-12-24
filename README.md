@@ -25,7 +25,11 @@ This project is deployed using **Render** and utilizes **PostgreSQL** as the clo
 - Reads out form questions when users click on a speaker icon.
 - Enhances accessibility and improves user interaction.
 
-### 3. PostgreSQL Integration with Cloud Service
+### 3. PDF Generation
+- Integrated a feature that allows automatic generation of a PDF once the form is completed using voice input.
+- Ensures better accessibility and usability for users by providing a downloadable and shareable format.
+
+### 4. PostgreSQL Integration with Cloud Service
 - Upgraded the database to PostgreSQL, now deployed on a reliable cloud service.
 - Ensures:
   - Improved scalability
