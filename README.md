@@ -7,6 +7,10 @@ It may take time to go live for the first try in this service, If the server is 
 
 This project is deployed using **Render** and utilizes **PostgreSQL** as the cloud database to store and manage data. You can view the live version of the application by clicking the link above.
 
+## Demo Video:
+[Watch the Demo Video](<https://drive.google.com/file/d/1ugRQXE77-BNlWGcPVRsDmyfG4aI3MJGq/view?usp=drive_link>)
+
+
 ## Technologies Used:
 - **Backend:** Flask
 - **Database:** PostgreSQL (Hosted on Render)
